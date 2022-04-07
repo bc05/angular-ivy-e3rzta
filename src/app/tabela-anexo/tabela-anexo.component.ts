@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 export interface IDocumentoAnexo {
   nome: string;
+  tipo: string;
   classificacao: string;
 }
 
@@ -17,10 +18,12 @@ export class TabelaAnexoComponent implements OnInit {
   documentosAnexos: IDocumentoAnexo[] = [
     {
       nome: 'Regulamento',
+      tipo: 'regulamneto',
       classificacao: 'Obrigatório',
     },
     {
       nome: 'Termo',
+      tipo: 'termo',
       classificacao: 'Obrigatório',
     },
   ];
@@ -36,7 +39,9 @@ export class TabelaAnexoComponent implements OnInit {
 
     this.documentosAnexos.forEach((documentoAnexo) => {
       const control = this.fb.control(null, Validators.required);
-      this.documentoAnexoForm.addControl(documentoAnexo.nome, control);
+      this.documentoAnexoForm.addControl(documentoAnexo.tipo, control);
     });
+
+    console.log(this.documentoAnexoForm);
   }
 }
