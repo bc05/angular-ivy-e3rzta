@@ -1,0 +1,17 @@
+<form>
+  <table>
+    <thead>
+      <th></th>
+      <th>Nome</th>
+      <th>Classificação</th>
+      <th>Ações</th>
+    </thead>
+    <tbody>
+      <tr
+        linha-tabela-anexo
+        [documentoAnexo]="documentoAnexo"
+        *ngFor="let documentoAnexo of documentosAnexos"
+      ></tr>
+    </tbody>
+  </table>
+</form>
