@@ -24,7 +24,7 @@ export class LinhaTabelaAnexoComponent implements ControlValueAccessor {
 
   onChange: (valor: Object) => void;
   onTouch: () => void;
-  valor: Object;
+  //valor: Object;
 
   formControl: FormControl;
 
@@ -33,7 +33,7 @@ export class LinhaTabelaAnexoComponent implements ControlValueAccessor {
   }
 
   writeValue(valor: Object): void {
-    this.valor = valor;
+    this.formControl.setValue(valor);
   }
 
   registerOnChange(fn: (valor: Object) => void): void {
@@ -45,9 +45,9 @@ export class LinhaTabelaAnexoComponent implements ControlValueAccessor {
   }
 
   mudouValor() {
-    this.valor = { id: Math.floor(Math.random() * 10) };
+    this.formControl.setValue({ id: Math.floor(Math.random() * 10) });
     if (this.onChange) {
-      this.onChange(this.valor);
+      this.onChange(this.formControl.value);
     }
   }
 }

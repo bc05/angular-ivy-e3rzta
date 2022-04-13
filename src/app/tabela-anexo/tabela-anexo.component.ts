@@ -18,7 +18,7 @@ export class TabelaAnexoComponent implements OnInit {
   documentosAnexos: IDocumentoAnexo[] = [
     {
       nome: 'Regulamento',
-      tipo: 'regulamneto',
+      tipo: 'regulamento',
       classificacao: 'Obrigatório',
     },
     {
