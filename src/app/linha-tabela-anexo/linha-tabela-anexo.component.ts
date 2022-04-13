@@ -50,6 +50,7 @@ export class LinhaTabelaAnexoComponent implements ControlValueAccessor {
     if (this.onChange) {
       this.onChange(this.formControl.value);
     }
+    this.onTouch();
   }
 
   remover() {
