@@ -38,10 +38,13 @@ export class TabelaAnexoComponent implements OnInit {
     this.documentoAnexoForm = this.fb.group({});
 
     this.documentosAnexos.forEach((documentoAnexo) => {
-      const control = this.fb.control(null, Validators.required);
+      const control = this.fb.control(
+        {
+          id: Math.floor(Math.random() * 10000),
+        },
+        Validators.required
+      );
       this.documentoAnexoForm.addControl(documentoAnexo.tipo, control);
     });
-
-    console.log(this.documentoAnexoForm);
   }
 }
