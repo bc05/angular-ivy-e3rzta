@@ -3,8 +3,10 @@
 <td>{{ documentoAnexo.classificacao }}</td>
 <td>
   <button (click)="mudouValor()">Upload</button>
-  <button>Excluir</button>
+  <button (click)="remover()">Excluir</button>
   <button>mensagem</button>
 </td>
 
-<p>filho: {{ formControl.value | json }}</p>
+<p>filho: {{ formControl.invalid }}</p>
+<p>filho: {{ formControl.touched }}</p>
+<p>filho: {{ formControl.dirty }}</p>

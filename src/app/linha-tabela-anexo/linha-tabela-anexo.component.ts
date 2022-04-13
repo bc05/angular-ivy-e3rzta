@@ -4,6 +4,7 @@ import {
   FormBuilder,
   FormControl,
   NG_VALUE_ACCESSOR,
+  Validators,
 } from '@angular/forms';
 import { IDocumentoAnexo } from '../tabela-anexo/tabela-anexo.component';
 
@@ -29,7 +30,7 @@ export class LinhaTabelaAnexoComponent implements ControlValueAccessor {
   formControl: FormControl;
 
   constructor(private fb: FormBuilder) {
-    this.formControl = this.fb.control(null);
+    this.formControl = this.fb.control(null, Validators.required);
   }
 
   writeValue(valor: Object): void {
@@ -44,10 +45,14 @@ export class LinhaTabelaAnexoComponent implements ControlValueAccessor {
     this.onTouch = fn;
   }
 
-  mudouValor() {
-    this.formControl.setValue({ id: Math.floor(Math.random() * 10) });
+  mudouValor(valor: any) {
+    this.formControl.setValue(valor);
     if (this.onChange) {
       this.onChange(this.formControl.value);
     }
+  }
+
+  remover() {
+    this.mudouValor(null);
   }
 }
