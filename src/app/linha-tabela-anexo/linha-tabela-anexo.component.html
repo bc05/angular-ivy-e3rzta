@@ -2,11 +2,14 @@
 <td>{{ documentoAnexo.nome }}</td>
 <td>{{ documentoAnexo.classificacao }}</td>
 <td>
-  <button (click)="mudouValor()">Upload</button>
+  <button (click)="upload()">Upload</button>
   <button (click)="remover()">Excluir</button>
   <button>mensagem</button>
 </td>
 
-<p>filho: {{ formControl.invalid }}</p>
-<p>filho: {{ formControl.touched }}</p>
-<p>filho: {{ formControl.dirty }}</p>
+invalido
+<p>{{ formControl.invalid }}</p>
+tocado
+<p>{{ formControl.touched }}</p>
+sujo
+<p>{{ formControl.dirty }}</p>

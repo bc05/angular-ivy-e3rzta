@@ -55,4 +55,8 @@ export class LinhaTabelaAnexoComponent implements ControlValueAccessor {
   remover() {
     this.mudouValor(null);
   }
+
+  upload() {
+    this.mudouValor(Math.floor(Math.random() * 100000));
+  }
 }
