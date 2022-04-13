@@ -2,7 +2,9 @@
 <td>{{ documentoAnexo.nome }}</td>
 <td>{{ documentoAnexo.classificacao }}</td>
 <td>
-  <button>Upload</button>
+  <button (click)="mudouValor()">Upload</button>
   <button>Excluir</button>
   <button>mensagem</button>
 </td>
+
+<p>filho: {{ valor | json }}</p>

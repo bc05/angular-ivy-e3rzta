@@ -17,21 +17,27 @@ import { IDocumentoAnexo } from '../tabela-anexo/tabela-anexo.component';
 export class LinhaTabelaAnexoComponent implements ControlValueAccessor {
   @Input() documentoAnexo: IDocumentoAnexo;
 
+  onChange: (valor: Object) => void;
+  valor: Object;
+
   constructor() {}
 
-  writeValue(valor: any): void {
-    console.log('Method not implemented.');
+  writeValue(valor: Object): void {
+    this.valor = valor;
   }
 
-  registerOnChange(fn: any): void {
-    console.log('Method not implemented.');
+  registerOnChange(fn: (valor: Object) => void): void {
+    this.onChange = fn;
   }
 
   registerOnTouched(fn: any): void {
     console.log('Method not implemented.');
   }
 
-  setDisabledState(isDisabled: boolean): void {
-    console.log('Method not implemented.');
+  mudouValor() {
+    this.valor = { id: Math.floor(Math.random() * 10) };
+    if (this.onChange) {
+      this.onChange(this.valor);
+    }
   }
 }
