@@ -18,6 +18,7 @@ export class LinhaTabelaAnexoComponent implements ControlValueAccessor {
   @Input() documentoAnexo: IDocumentoAnexo;
 
   onChange: (valor: Object) => void;
+  onTouch: () => void;
   valor: Object;
 
   constructor() {}
@@ -31,7 +32,7 @@ export class LinhaTabelaAnexoComponent implements ControlValueAccessor {
   }
 
   registerOnTouched(fn: any): void {
-    console.log('Method not implemented.');
+    this.onTouch = fn;
   }
 
   mudouValor() {
