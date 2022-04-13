@@ -1,5 +1,10 @@
 import { Component, forwardRef, Input, OnInit } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import {
+  ControlValueAccessor,
+  FormBuilder,
+  FormControl,
+  NG_VALUE_ACCESSOR,
+} from '@angular/forms';
 import { IDocumentoAnexo } from '../tabela-anexo/tabela-anexo.component';
 
 @Component({
@@ -21,7 +26,11 @@ export class LinhaTabelaAnexoComponent implements ControlValueAccessor {
   onTouch: () => void;
   valor: Object;
 
-  constructor() {}
+  formControl: FormControl;
+
+  constructor(private fb: FormBuilder) {
+    this.formControl = this.fb.control(null);
+  }
 
   writeValue(valor: Object): void {
     this.valor = valor;
